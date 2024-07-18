@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        //2 ways to declare an array.
+        //const ar = new Array(1, 2, '3', 'a', 'b', 4, 5);
+        let ar = [1, 2, '3', 'a', "dimri", 'b', 4, 5];
+        console.log("Array = " + ar);
+        ar[7] = '%';
+        console.log("Array changed after ar[7] = '%' = " + ar);
+        console.log("Type of operator: " + typeof ar);
+
+        let txt;
+        ar.forEach(iterateArray);
+        //document.getElementById("demo").innerHTML = txt;
+        
+        console.log("Elements of array : " + txt);
+
+        // this function has 3 parameters but using only 1st parameter.
+        function iterateArray(value, index, array) { 
+            txt += value + ", "; 
+        }
+
+        console.log("ar.at(2) same as [] = "+ar.at(2));
+        console.log("ar.join('#') = "+ar.join('#'));
+        
+        let joinar = ar.join('$');
+        console.log("ar.join('#') = " + joinar);
+        
+        console.log("ar.push('last') = "+ ar.push('last'));
+        console.log("ar.shift() = " + ar.shift());
+
+        console.log("ar.unshift() = " + ar.unshift("kaam 25"));
+        
+        console.log("delete(ar[1]) = " + delete(ar[1]));
+        
+        console.log("Elements are : " + ar);
+        
+        let arr = [0.5, 50.54,25.6548];
+        console.log("Concatinating arrays : "+ ar.concat([200,400], arr));
+        console.log("Elements are : " + ar);
+        let str = ar.toString(); // made a string and separated elements by commas.
+        console.log(str);
+        console.log("Type of operator on str: " + typeof str);
+
+
+
+    </script>
+</body>
+</html>

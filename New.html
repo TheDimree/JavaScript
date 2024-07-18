@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern</title>
+</head>
+<body>
+    <h1>Pattern</h1>
+    <script>
+        //A1B1 A2B2.......
+        // function pattern1() {
+        //     document.write("<br>1.<br>");
+        //     for(i=1;i<=10;i++) {
+        //         for(j=1;j<=1;j++)
+        //         document.write("A"+i+"B"+i+"<br>");
+        //     }
+        // }
+        // console.log(pattern1());
+
+        // //XY12 XY34 XY56...
+        // function pattern2() {
+        //     document.write("<br>2.<br>");
+        //     let a = 1;
+        //     for(i = 1; i < 10; i++) {
+        //         document.write("XY" + a + ++a + "<br>");
+        //         a++;
+        //     }
+        // }
+
+        // console.log(pattern2());
+
+        // // 1@ 2@@ 3@@@@ 4@@@@ ....
+        // function pattern3() {
+        //     document.write("<br>3.<br>");
+        //     for(i = 1; i < 10; i++) {
+        //         document.write(i); 
+        //         for(j = 1; j <= i; j++) {
+        //             document.write("@");
+        //         }
+        //         document.write("<br>");
+        //     }
+        // }
+
+        // console.log(pattern3());
+
+        // // M+ MM+ MMM+ MMMM+
+        // function pattern4() {
+        //     document.write("<br>4.<br>");
+        //     for(i = 1; i < 10; i++) { 
+        //         for(j = 1; j <= i; j++) {
+        //             document.write("M");
+        //         }
+        //         document.write("+<br>");
+        //     }
+        // }
+
+        // console.log(pattern4());
+
+        function pattern5() {
+            a = 2;
+            b = 3;
+            e= 1;
+            o=1;
+            for(i= 1; i<10; i++) {
+                for(j= 1; j<10;j++) {
+                    if(i%2==0) {
+                        document.write(a+" x "+ i +" = " + a*o)
+                        document.write("<br>");
+                        o++;
+
+                        break;    
+                    }
+                    else {
+                        document.write(b+" x "+ i +" = " + b*e)
+                        document.write("<br>");
+                        e++;
+                        break;
+                    }
+                }
+            }
+        }
+        console.log(pattern5())
+
+    </script>
+</body>
+</html>

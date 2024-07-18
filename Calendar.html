@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+</head>
+
+<body>
+    <h1>Find your Day in the ginven range</h1>
+    <label>Enter your range for years : </label><input type="text" id="lower"> <input type="text" id="upper"></br><br>
+    <label>Enter the day: </label> <input type="text" id="day" placeholder="Sunday = 0, Saturday =6"><br><br>
+    <button onClick="check()">Check</button><br><br>
+    <p id="din"></p><p id="show"></p>
+    <script>
+        function check() {
+            const x= document.getElementById("lower").value;
+            const y= document.getElementById("upper").value;
+            const years = [];
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const din = document.getElementById("day").value;
+            var i = 0;
+            for (var year = x; year <= y; year++) {
+                const d = new Date(year, 0, 1); //Year, January, 1            
+                if (d.getDay() == din) {
+                    years[i++] = year;
+                }
+            }
+
+            document.getElementById("din").innerHTML = days[din]+":";
+            document.getElementById("show").innerHTML = years;
+        }
+    </script>
+</body>
+</html>

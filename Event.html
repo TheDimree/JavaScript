@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Events</title>
+</head>
+<body>
+
+<button onClick="alertEvent()">Alert</button></br>
+<button onClick="ClickEvent()">Click</button></br>
+<button ondblclick="doubleClickEvent()">Double Click</button></br>
+<button onmouseover="mouseOverEvent()">Mouse Over</button></br>
+
+<p id="show"></p></br>
+
+
+<label>a:</label>
+<input type="text" id="a" value=""><br>
+<label name="b">b:</label>
+<input type="text" id="b" value=""><br>
+<button onClick="add()">Add</button>
+<p name="sum"></p>
+<script>
+function alertEvent() {
+	alert("Alert on JS");
+	console.log("Alert on JS");
+}
+
+function ClickEvent() {
+	document.getElementById("show").innerHTML = "You clicked the mouse.";
+	console.log("Wow! You clicked the mouse.");
+}
+
+function doubleClickEvent() {
+	document.getElementById("show").innerHTML = "Wow! You double clicked the mouse.";
+	console.log("You double clicked the mouse.");
+}
+
+function mouseOverEvent(){
+	document.getElementById("show").innerHTML = "Mouse over event triggered";
+	console.log("Wow! Mouse over event triggered");
+}
+
+function add(){
+var a = parseInt(document.getElementById("a").value);
+var b = parseInt(document.getElementById("b").value);
+console.log(a+b);
+a+=b;
+document.getElementById("show").innerHTML = a;
+}
+</script>
+</body>
+</html>

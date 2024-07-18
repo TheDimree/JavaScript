@@ -1,0 +1,118 @@
+<html>
+<body>
+
+  <label>First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label>Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <button onClick="check()">Check</button>
+  <p id="display"></p>
+
+<script>
+
+function check(){
+var a = document.getElementById("fname").value;
+var b = document.getElementById("lname").value;
+
+if(a==b)
+	document.getElementById("display").innerHTML = "Correct";
+else
+	document.getElementById("display").innerHTML = "Incorrect";
+}
+
+	/*var pct=prompt("Enter your percentage");
+	if(pct>=90 && pct<=100)
+		console.log("You are in merit list.");
+	else if(pct>33 && pct<90)
+		console.log("You are pass.");
+	else if(pct>=0 && pct<33)
+		console.log("You are fail.");
+	else
+		console.log("Enter correct percentage.");*/
+		
+
+	/*var age = prompt("Enter your age");
+	if(age>0 && age<18)
+		console.log("You are not eligible to vote.");
+	else if(age>=18 && age<=100)
+		console.log("Eligible to vote.");
+	else
+		console.log("Enter the age between 1 and 100");
+		
+	var no= prompt("Enter any no. to check if it is odd or even");
+	if(no%2==0)
+		console.log("Even");
+	else
+		console.log("Odd");*/
+		
+	/*var age = prompt("Enter your age");
+	if(age>=60)
+		console.log("Enjoy your stay at home.");
+	else if(age>25 && age<60)
+		console.log("Participate in event.");
+	else if(age>=18 && age<=25)
+		console.log("Welcome to the event");
+	else
+		console.log("Enter correct age.");*/
+
+/*var day = prompt("Enter day no=");
+console.log(day);
+switch(day) {
+  case "0":
+    console.log("Sunday");
+    break;
+  case "1":
+    console.log("Monday");
+    break;
+  case "2":
+    console.log("Tuesday");
+    break;
+	case "3":
+    console.log("Wednesday");
+    break;
+	case "4":
+	console.log("Thursday");
+    break;
+	case "5":
+    console.log("Friday");
+    break;
+	case "6":
+    console.log("Saturday");
+    break;
+	default:
+	console.log("Try again");
+}*/
+
+/*var day = parseInt(prompt("Enter day no="));
+console.log(day);
+switch(day) {
+  case 0:
+    console.log("Sunday");
+    break;
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+	case 3:
+    console.log("Wednesday");
+    break;
+	case 4:
+	console.log("Thursday");
+    break;
+	case 5:
+    console.log("Friday");
+    break;
+	case 6:
+    console.log("Saturday");
+    break;
+	default:
+	console.log("Try again");
+}
+
+/*var x = prompt("Enter any no. to check odd/even");
+(x%2==0) ? console.log("Even") : console.log("Odd");*/
+</script>
+</body>
+</html>

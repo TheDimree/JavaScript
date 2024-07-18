@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        function result(sum) {
+            console.log(`Sum is ${sum}`);
+        }
+
+        // function add(a,b) {
+        //     sum = a+b;
+        //     result();
+        // }
+
+
+        // add(5,4);
+
+
+        //! A callback is a function passed as an argument to another function.
+
+        function addition(num1, num2, myCallback) {
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+
+        //! Using a callback, you could call the calculation function (addition) with a callback (myCallback), and let the addition function run the callback after the addition is finished:
+
+        addition(5, 5, result); //When you pass a function as an argument, remember not to use parenthesis.
+
+    </script>
+</body>
+</html>

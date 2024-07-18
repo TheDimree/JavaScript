@@ -1,0 +1,29 @@
+<html>
+<body>
+<label>First:</label> <input type="text" id="first"></br>
+<label>Second:</label> <input type="text" id="second"></br>
+<label>Third:</label><input type="text" id="third"></br>
+<label>Fourth:</label><input type="text" id="fourth"></br>
+<button onClick="check()">Check</button>
+<p id="show"></p>
+<script>
+function check(){
+	var a = parseInt(document.getElementById("first").value);
+	var b = parseInt(document.getElementById("second").value);
+	var c = parseInt(document.getElementById("third").value);
+	var d = parseInt(document.getElementById("fourth").value);
+	//console.log(a,b,c,d);
+	if(a>=b && a>=c && a>=d)
+		x = "First";
+	else if(b>=a && b>=c && b>=d)
+		x = "Second";
+	else if(c>=a && c>=b && c>=d)
+		x = "Third";
+	else
+		x = "Fourth";
+
+	document.getElementById("show").innerHTML = x +" Value is the greatest.";
+}
+</script>
+</body>
+</html>

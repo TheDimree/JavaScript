@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeroes</title>
+</head>
+<body>
+    <label>Enter any no: </label><input type="text" id="x"><br>
+    <button onClick="zeroes()">Check Zeroes</button>
+    <p id="show"></p>
+    <script>
+        function zeroes() {
+            count = 0;
+            x= parseInt(document.getElementById("x").value);
+            while(x>0) {
+                r=x%10;
+                if(r==0){
+                    count++;
+                }
+                x=parseInt(x/10);
+            }
+            document.getElementById("show").innerHTML="No. of zeroes = "+count;
+        }
+        //console.log(zeroes(102030000005000));
+    </script>
+</body>
+</html>

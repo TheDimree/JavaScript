@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>OOPs</title>
+</head>
+<body>
+<p id = "show"></p>
+<script>
+
+class Student
+{
+	
+	constructor() {
+		document.getElementById('show').innerHTML = "Student's object is created.";
+	}
+	
+	detail (roll, name, qualification) {
+		this.roll = roll;
+		this.name = name;
+		this.qualification = qualification;
+		//return this.name;
+	}
+	
+	display() {
+		document.getElementById('show').innerHTML += `<br> Roll No = ${this.roll}, Name = ${this.name} and the qualification = ${this.qualification}`;
+	}
+
+	//? show  = () => () {
+	// 	document.getElementById('show').innerHTML += `<br> Roll No = ${this.roll}, Name = ${this.name} and the qualification = ${this.qualification}`;
+	// }
+}
+
+let Bhagesh = new Student();
+Bhagesh.detail(420, "Bhagesh", "MCA");
+Bhagesh.display();
+//Bhagesh.show();
+</script>
+</body>
+</html>

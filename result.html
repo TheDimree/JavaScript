@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<style>
+    h1 {
+        background-color: grey;
+    }
+
+#status {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<body>
+    <h1>Check your result statues</h1>
+    Hindi <input type="text" id="hin">
+    English <input type="text" id="eng">
+    Math <input type="text" id="mat">
+    Java <input type="text" id="jav">
+    Javascript <input type="text" id="jas">
+    <button onClick="result()">Result Status</button> <br><br>
+    Total marks=<p id="mar"></p>
+    Percentage= <p id="per"></p>
+    <p id="status"></p>
+    <script>
+        function result() {
+            const hindi = parseInt(document.getElementById("hin").value);
+            const english = parseInt(document.getElementById("eng").value);
+            const math = parseInt(document.getElementById("mat").value);
+            const jav = parseInt(document.getElementById("jav").value);
+            const javas = parseInt(document.getElementById("jas").value);
+            const total = hindi + english + math + jav + javas
+            const per = total / 5;
+            console.log(total, per);
+            document.getElementById("mar").innerHTML = total;
+            document.getElementById("per").innerHTML = per;
+            if (per >= 33)
+                document.getElementById("per").innerHTML = "Congratulations! You're pass.";
+            else
+                document.getElementById("per").innerHTML = "Sorry! You're fail.";
+        }
+
+    </script>
+</body>
+
+</html>

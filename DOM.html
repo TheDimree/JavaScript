@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <div>This ia a div</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium molestiae facilis quo dolorum voluptatum praesentium tenetur corrupti necessitatibus aperiam unde error voluptates, libero sit, porro ducimus obcaecati tempore natus est. Distinctio sit tempora optio ducimus, deserunt sapiente fuga, laudantium cum obcaecati repudiandae laborum tempore quisquam suscipit placeat magni adipisci animi odit eos culpa sunt eligendi. Dolor ratione totam laboriosam delectus in repellat soluta consequatur, alias voluptate. Omnis quidem, dignissimos quibusdam libero a quos, inventore nulla nemo amet ad ex debitis. Aut adipisci, eaque nostrum totam assumenda aperiam quos aspernatur eligendi exercitationem, eos excepturi! Laboriosam, rem! Vitae a doloremque nulla repellendus.</p>
+    <a link="google.com">Google</a>
+    
+    <script>
+        console.log("document in clg: ",document);  //It shows the HTML tags structure.
+        console.dir(document);  // It shows all varriables and properties
+        
+        console.dir(document.body)
+        console.dir(document.head)
+        console.dir(document.body.childNodes[1])
+        
+        //* Changing body background color
+        document.body.style.background = 'grey'
+
+        document.body.childNodes[1].innerText ="Changed the text by document.body.childNodes[1].innerText"
+
+
+        document.getElementById("myId")
+        document.getElementByClass("myClass")
+        document.getElementByTagName("p")
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
