@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1st no: <input type="text" id="x"><br>
+    2nd no: <input type="text" id="y"><br>
+    <button id="mul" onClick="mult()">Multiply</button>
+    <button id="div" onClick="divi()">Divide</button><br><br>
+    <label></label>The result is</label>
+    <p id="show"></p>
+    <script>
+        function mult(){
+            //result = parseInt(document.getElementById("mul").value) * parseInt(document.getElementById("div").value);
+            x = parseInt(document.getElementById("x").value) 
+            y = parseInt(document.getElementById("y").value);
+            return(document.getElementById("show").innerHTML=x*y);
+        }
+        function divi(){
+            x = parseInt(document.getElementById("x").value) 
+            y = parseInt(document.getElementById("y").value);
+            return(document.getElementById("show").innerHTML=x/y);
+        }
+    </script>
+</body>
+</html>
