@@ -55,6 +55,34 @@
         }
 
         console.log(pattern4());
+		
+		function pattern5() {
+            document.write("<br>5. Pattern<br>");
+            for(i = 1; i < 6; i++) { 
+                for(j = 1; j <= i; j++) {
+                    document.write(i);
+                }
+                document.write("<br>");
+            }
+        }
+
+        console.log(pattern5());
+		
+        //* Pyramid output WHY?
+		function pattern6() {
+            document.write("<br>6. Pattern<br>");
+            for(let i = 1; i < 6; i++) { 
+                for(let k = 1; k <= 6 - i; k++) {
+                    document.write("&nbsp;");
+                }
+                for(let j = 1; j <= i; j++) {
+                    document.write(i);
+                }
+                document.write("<br>");
+            }
+        }
+
+        pattern6();
 
     </script>
 </body>
