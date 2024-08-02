@@ -18,7 +18,7 @@
                     return res.json();  //converting in json format.
                 })
                 .then((data)=> {
-                   console.log("blogs:", data.blogs);   // data: { "blogs" : [{},{}...] }
+                   console.log("Fetch blogs:", data.blogs);   // data: { "blogs" : [{},{}...] }
                 })
                 .catch((error) => console.error("Unable to fetch data:", error));
         }
@@ -26,14 +26,14 @@
         function fetchAXIOSJSONData() {
             axios.get("./API/blogs.json")
                 .then((response) => {
-                    console.log("blogs:", response.data.blogs); // response.data contains the JSON data
+                    console.log("AXIOS blogs:", response.data.blogs); // response.data contains the JSON data
                 })
                 .catch((error) => console.error("Unable to fetch data:", error));
         }
 
         // Uncomment the line below to use fetch API
-        // fetchJSONData()
-        // fetchAXIOSJSONData()
+        fetchJSONData()
+        fetchAXIOSJSONData()
     </script>
 </body>
 </html>
