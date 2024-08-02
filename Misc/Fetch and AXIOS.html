@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch and AXIOS</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h3>Go to the console to see the fetched data!!</h3>
+    <script>
+        function fetchJSONData() {
+            fetch("./API/blogs.json")
+                .then((res) => { 
+                    if(!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);    
+                    }
+                    return res.json();  //converting in json format.
+                })
+                .then((data)=> {
+                   console.log("blogs:", data.blogs);   // data: { "blogs" : [{},{}...] }
+                })
+                .catch((error) => console.error("Unable to fetch data:", error));
+        }
+        
+        function fetchAXIOSJSONData() {
+            axios.get("./API/blogs.json")
+                .then((response) => {
+                    console.log("blogs:", response.data.blogs); // response.data contains the JSON data
+                })
+                .catch((error) => console.error("Unable to fetch data:", error));
+        }
+
+        // Uncomment the line below to use fetch API
+        // fetchJSONData()
+        // fetchAXIOSJSONData()
+    </script>
+</body>
+</html>
