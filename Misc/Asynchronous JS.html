@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      
+      function promiseDemo() {
+        const promise = new Promise((resolved, rejected) => {
+          const str1 = "Check";
+          const str2 = "Check";
+          // Simulate an asynchronous operation
+          setTimeout(() => {
+            console.log("Timed out for 2 seconds.");
+            if (str1 === str2) resolved("Strings are equal.");
+            else rejected(new Error("Strings are not equal."));
+          }, 2000);
+        });
+        promise
+          .then((result) => {
+            document.getElementById("demo").innerHTML = "Resolved: " + result;
+            console.log("Equal");
+          })
+          .catch((error) => {
+            document.getElementById("demo").innerHTML =
+              "Error: " + error.message;
+          });
+      }
+      
+      //! this function returns the same normal above promise.
+      const helperPromise = function () {
+        const promise = new Promise((resolved, rejected) => {
+          const str1 = "Check";
+          const str2 = "Check";
+          // Simulate an asynchronous operation
+          setTimeout(() => {
+            console.log("Timed out for 2 seconds.");
+            if (str1 === str2) resolved("Strings are equal.");
+            else rejected(new Error("Strings are not equal."));
+          }, 2000);
+        });
+        return promise;
+      };
+
+      async function asyncAwaitDemo() {
+        try {
+          const promise = await helperPromise();  // asynchronous functions are called with keyword await.
+          document.getElementById("demo").innerHTML = "Resolved: " + promise;
+        } catch (error) {
+          document.getElementById("demo").innerHTML = "Error: " + error.message;
+        }
+      }
+      
+      //Main Driver check both functions by calling them.
+      // promiseDemo();
+      // asyncAwaitDemo();
+    </script>
+  </body>
+</html>
