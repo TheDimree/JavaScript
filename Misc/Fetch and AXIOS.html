@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch and AXIOS</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <h3>Go to the console to see the fetched data!!</h3>
     <script>
-        function fetchJSONData() {
+
+        function fetchJSONData() {  //fetch using simple promise
             fetch("./API/blogs.json")
-                .then((res) => { 
-                    if(!res.ok) {
-                        throw new Error(`HTTP error! Status: ${res.status}`);    
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
                     }
                     return res.json();  //converting in json format.
                 })
-                .then((data)=> {
-                   console.log("Fetch blogs:", data.blogs);   // data: { "blogs" : [{},{}...] }
-                })
-                .catch((error) => console.error("Unable to fetch data:", error));
-        }
-        
-        function fetchAXIOSJSONData() {
-            axios.get("./API/blogs.json")
-                .then((response) => {
-                    console.log("AXIOS blogs:", response.data.blogs); // response.data contains the JSON data
+                .then((data) => {
+                    console.log("Fetched blogs using promise:", data.blogs);   // data: { "blogs" : [{},{}...] }
                 })
                 .catch((error) => console.error("Unable to fetch data:", error));
         }
 
+        async function fetchAAJSONData() {    ////fetch data using async/await
+            try {
+                const response = await fetch("./API/blogs.json")   // response.data contains the JSON data 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${res.status}`);
+                }
+                const data = await response.json();  //converting in json format.
+                console.log("Fetched blogs using async/await syntax:", data.blogs)
+            } catch (error) {
+                console.error("Unable to fetch data:", error);
+            }
+        }
+
+        async function fetchAXIOSJSONData() {
+            try {
+                const response = await axios.get("./API/blogs.json");
+                console.log("AXIOS blogs:", response.data.blogs);   // data: { "blogs" : [{},{}...] }
+            } catch (error) {
+                console.error("Unable to fetch data:", error);
+            }
+        }
+
         // Uncomment the line below to use fetch API
         fetchJSONData()
+        fetchAAJSONData()
         fetchAXIOSJSONData()
     </script>
 </body>
+
 </html>
