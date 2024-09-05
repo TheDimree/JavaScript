@@ -9,7 +9,7 @@ const decrement='decrement';
 const incrementByAmount='incrementByAmount';
 
 //store
-const store = createStore(reducer, applyMiddleware(logger.default));
+const store=createStore(reducer, applyMiddleware(logger.default));
 
 
 // reducer changes and return the state after applying the action
